@@ -11,6 +11,7 @@
 		759A031327A072DB000140F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A031227A072DB000140F6 /* ContentView.swift */; };
 		759A031527A072DD000140F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759A031427A072DD000140F6 /* Assets.xcassets */; };
 		759A031827A072DD000140F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759A031727A072DD000140F6 /* Preview Assets.xcassets */; };
+		759A032127A1D879000140F6 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A032027A1D879000140F6 /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		759A031227A072DB000140F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		759A031427A072DD000140F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		759A031727A072DD000140F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		759A032027A1D879000140F6 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				759A031227A072DB000140F6 /* ContentView.swift */,
 				759A031427A072DD000140F6 /* Assets.xcassets */,
 				759A031627A072DD000140F6 /* Preview Content */,
+				759A032027A1D879000140F6 /* ColorView.swift */,
 			);
 			path = HomeWork3.2;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759A032127A1D879000140F6 /* ColorView.swift in Sources */,
 				759A031327A072DB000140F6 /* ContentView.swift in Sources */,
 				759A031127A072DB000140F6 /* HomeWork3_2App.swift in Sources */,
 			);
