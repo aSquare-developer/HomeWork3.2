@@ -9,63 +9,51 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var redSliderValue = Double.random(in: 0...255)
-    @State private var greenSliderValue = Double.random(in: 0...255)
-    @State private var blueSliderValue = Double.random(in: 0...255)
+    @State private var red = Double.random(in: 0...255)
+    @State private var green = Double.random(in: 0...255)
+    @State private var blue = Double.random(in: 0...255)
     
-    @State private var redColor = Color.red
-    @State private var greenColor = Color.green
-    @State private var blueColor = Color.blue
+    @FocusState private var isInputActive: Bool
     
     var body: some View {
         
-        let viewColor = Color(red: redSliderValue / 255, green: greenSliderValue / 255, blue: blueSliderValue / 255)
-        
-        VStack(spacing: 20) {
-            ColorView(backgroundColor: viewColor)
-
-            ColorSliderView(value: $redSliderValue, color: $redColor)
-            ColorSliderView(value: $greenSliderValue, color: $greenColor)
-            ColorSliderView(value: $blueSliderValue, color: $blueColor)
+        ZStack {
+            Color(.orange)
+                .ignoresSafeArea()
+                .onTapGesture {
+                    isInputActive = false
+                }
             
-            Spacer()
+            VStack(spacing: 40) {
+                ColorView(red: red, green: green, blue: blue)
+                
+                VStack {
+                    ColorSliderView(value: $red, color: .red)
+                    ColorSliderView(value: $green, color: .green)
+                    ColorSliderView(value: $blue, color: .blue)
+                }
+                .frame(height: 150)
+                .focused($isInputActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            isInputActive = false
+                        }
+                    }
+                }
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
         
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-    }
-}
-
-struct ColorView: View {
-    
-    let backgroundColor: Color
-    
-    var body: some View {
-        Rectangle()
-            .fill(backgroundColor)
-            .frame(width: 350, height: 200)
-            .cornerRadius(30)
-    }
-}
-
-struct ColorSliderView: View {
-    
-    @Binding var value: Double
-    @Binding var color: Color
-    
-    var body: some View {
-        HStack(spacing: 16) {
-            Text("\(lround(value))")
-                .foregroundColor(color)
-                .frame(width: 35)
-            Slider(value: $value, in: 0...255, step: 1)
-                .tint(color)
-            // TODO TextField
+        ZStack {
+            ContentView()
         }
     }
 }
